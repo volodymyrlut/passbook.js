@@ -1,0 +1,24 @@
+{
+  "name": "passbook.js",
+  "version": "1.0.0",
+  "description": "All you need to serve passbooks with your Node.js backend",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/volodymyrlut/passbook.js.git"
+  },
+  "keywords": [
+    "Node.js",
+    "passbook",
+    "signpass"
+  ],
+  "author": "Volodymyr Lut",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/volodymyrlut/passbook.js/issues"
+  },
+  "homepage": "https://github.com/volodymyrlut/passbook.js"
+}
