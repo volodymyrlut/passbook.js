@@ -2,7 +2,7 @@
   "name": "passbook.js",
   "version": "1.0.0",
   "description": "All you need to serve passbooks with your Node.js backend",
-  "main": "index.js",
+  "main": "./index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -10,10 +10,28 @@
     "type": "git",
     "url": "https://github.com/volodymyrlut/passbook.js.git"
   },
+  "bin": {
+    "node-passbook": "./node-passbook"
+  },
+  "dependencies": {
+    "underscore": "1.4.4",
+    "archiver": "0.4.1",
+    "async": "0.2.6",
+    "fs": "",
+    "cli": ""
+  },
+  "devDependencies": {
+    "mocha": "1.6.0",
+    "should": "1.2.0"
+  },
   "keywords": [
     "Node.js",
     "passbook",
-    "signpass"
+    "signpass",
+    "iOS",
+    "apple",
+    "passbook",
+    "library"
   ],
   "author": "Volodymyr Lut",
   "license": "ISC",
