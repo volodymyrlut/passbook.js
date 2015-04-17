@@ -42,5 +42,5 @@ passbook_js.createPassbook(type, resorces, keys, password);
 ```
 
 ######It will create pass.pkpass file in root directory of your server //TODO: save the stuff in other directories. Signing mechanism was taken from [this module](https://github.com/danmilon/passbookster)
-#####Check out if it's valid using the iOS simulator. To send it from your server, be sure, that you set MIME type correctly. To set it in express, add following code to your server.js file `express.static.mime.define({'application/vnd.apple.pkpass': ['pkpass']});`
+#####Check out if it's valid using the iOS simulator. To send it from your server, be sure, that you set MIME type correctly. To set it in express, add following code to your server.js file ```express.static.mime.define({'application/vnd.apple.pkpass': ['pkpass']});```
 ######Now you're awesome! Stay tuned.
