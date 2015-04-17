@@ -19,23 +19,28 @@
 ######You'll need to get AppleWWDRCA.cer file [here](https://www.apple.com/certificateauthority/). Then, convert it into pem file using keychain or this command:
 `openssl x509 -inform der -in AppleAWWDRCA.cer -out wwdr.pem`
 
-######Also, you can prepare keys, using module's function `prepareKeys(path-to-directory-with-AppleWWDRCA.cer-and-*.p12-file-signed-with-your-passTypeId.cer)`. It runs node script from [this](https://github.com/assaf/node-passbook) module.
+######Also, you can prepare keys, using module's function `prepareKeys(path-to-directory-with-AppleWWDRCA.cer-and-*.p12-file-signed-with-your-passTypeId.cer);`. It runs node script from [this](https://github.com/assaf/node-passbook) module.
 #####Finally, you'll get the directory with wwrd.pem and Certificates.pem (signed with Pass Type ID) files and one passphrase, you should keep in mind.
 
 ###Preparing Passbook stuff
 
-######Check out official documentation to know how passbook structure looks like. You'll definetely need min configurations such as icon and logo pictures, pass.json file. Also Apple requires pictures for Retina displays. To get examples, check out official [passbook materials](https://developer.apple.com/devcenter/download.action?path=/ios/passbook_support_materials/passbook_materials.dmg).
+######Check out official documentation to know how passbook structure looks like. You'll definetely need min. configurations such as icon and logo pictures, pass.json file. Also Apple requires pictures for Retina displays. To get examples, check out official [passbook materials](https://developer.apple.com/devcenter/download.action?path=/ios/passbook_support_materials/passbook_materials.dmg).
 
 ######The idea of this module was that in some cases you need to create lots of passbooks without big changes, for example some great amount of same passbooks with different serial numbers. For these needs we will store all passbook resources in one folder, all keys - in other. All data is readed from pass.json file, so, please, be sure, that your pass.json file *is valid*.
+
+###Hey ho, let's go!
 
 ######To sign passbook, run following code:
 ```
 var passbook_js = require('passbook.js');   //Our module
 
-passbook_js.createPassbook = function(type, resorces, keys, password);
+passbook_js.createPassbook(type, resorces, keys, password);
 // type for passbook type (for example, coupon, boarding ticket, etc)
 // resources - path to folder with passbook resources
 // keys - path to folder with keys
 // password - password for Certificates.pem file
 ```
 
+######It will create pass.pkpass file in root directory of your server //TODO: save the stuff in other directories. Signing mechanism was taken from [this module](https://github.com/danmilon/passbookster)
+#####Check out if it's valid using the iOS simulator. To send it from your server, be sure, that you set MIME type correctly. To set it in express, add following code to your server.js file `express.static.mime.define({'application/vnd.apple.pkpass': ['pkpass']});`
+######Now you're awesome! Stay tuned.
