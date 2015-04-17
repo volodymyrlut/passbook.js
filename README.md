@@ -1,5 +1,8 @@
 #passbook.js
 ##Little passbook factory. More passbooks, less code.
+###Install
+######Download this repo, or install via npm
+######`npm install passbook.js`
 ###Preraring keys and certificates
 
 ####Pass Type ID
