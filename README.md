@@ -5,8 +5,7 @@
 ####Pass Type ID
 
 ######Go to [Apple Developer's portal](https://developer.apple.com/) and get your iOS Pass Type ID. If you are using MacOS, export it's key as *.pem file. Be sure that your certificate is signed on the apple developer's portal. Please, use [official passbook documentation](https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/PassKit_PG/Chapters/YourFirst.html#//apple_ref/doc/uid/TP40012195-CH2-SW1) to do that prorerly.
-######Note, that if youre are not using MacOS, you should generate Certificate Signing Request (*.csr) file manually. Here is [the guide](http://www.rackspace.com/knowledge_center/article/generate-a-csr-with-openssl). 
-######I've tried to do that stuff using Fedora. It's possible with SSL but a bit more difficult though.
+######Note, that if youre are not using MacOS, you should generate Certificate Signing Request (*.csr) file manually. Here is [the guide](http://www.rackspace.com/knowledge_center/article/generate-a-csr-with-openssl). I've tried to do that stuff using Fedora. It's possible with SSL but a bit more difficult though.
 ######Run this in console (if you are not using MacOS keychain).
 `openssl x509 -inform der -in pass.cer -out certificate.pem`
 ######It will convert the pass.cer to a .pem format the APNS will understand.
@@ -29,4 +28,14 @@
 
 ######The idea of this module was that in some cases you need to create lots of passbooks without big changes, for example some great amount of same passbooks with different serial numbers. For these needs we will store all passbook resources in one folder, all keys - in other. All data is readed from pass.json file, so, please, be sure, that your pass.json file *is valid*.
 
+######To sign passbook, run following code:
+`
+var passbook_js = require('passbook.js');   //Our module
+
+passbook_js.createPassbook = function(type, resorces, keys, password);
+// type for passbook type (for example, coupon, boarding ticket, etc)
+// resources - path to folder with passbook resources
+// keys - path to folder with keys
+// password - password for Certificates.pem file
+`
 
