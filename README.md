@@ -29,7 +29,7 @@
 ######The idea of this module was that in some cases you need to create lots of passbooks without big changes, for example some great amount of same passbooks with different serial numbers. For these needs we will store all passbook resources in one folder, all keys - in other. All data is readed from pass.json file, so, please, be sure, that your pass.json file *is valid*.
 
 ######To sign passbook, run following code:
-`
+```
 var passbook_js = require('passbook.js');   //Our module
 
 passbook_js.createPassbook = function(type, resorces, keys, password);
@@ -37,5 +37,5 @@ passbook_js.createPassbook = function(type, resorces, keys, password);
 // resources - path to folder with passbook resources
 // keys - path to folder with keys
 // password - password for Certificates.pem file
-`
+```
 
