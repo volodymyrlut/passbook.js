@@ -6,4 +6,5 @@
 ######I've also tried to do that stuff using Fedora. It's possible with SSL but a bit more difficult though.
 ######Run this in console.
 `openssl x509 -in pass.cer -inform DER -out pass.pem -outform PEM`
-######Also, [this commands] (https://www.sslshopper.com/article-most-common-openssl-commands.html) can help you.
+######Also, [this commands](https://www.sslshopper.com/article-most-common-openssl-commands.html) can help you.
+######You need to store 
