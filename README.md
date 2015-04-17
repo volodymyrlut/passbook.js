@@ -21,7 +21,9 @@
 `openssl x509 -inform der -in AppleAWWDRCA.cer -out wwdr.pem`
 
 ######Also, you can prepare keys, using module's function `prepareKeys(path-to-directory-with-AppleWWDRCA.cer-and-*.p12-file-signed-with-your-passTypeId.cer)`. It runs node script from [this](https://github.com/assaf/node-passbook) module.
-#####Finally, you'll get the directory with wwrd.pem and Certificates.pem (signed with Pass Type ID) files and one passphrase.
+#####Finally, you'll get the directory with wwrd.pem and Certificates.pem (signed with Pass Type ID) files and one passphrase, you should keep in mind.
 
 ###Preparing Passbook stuff
+
+######Check out official documentation to know how passbook structure looks like. You'll definetely need with min configurations such as icon and logo pictures, pass.json file. Also Apple requires pictures for Retina displays 
 
