@@ -17,6 +17,11 @@
 
 ####Apple Worldwide Developer Relations Certification Authority
 
-#####https://www.apple.com/certificateauthority/
+#####You'll need to get AppleWWDRCA.cer file [here](https://www.apple.com/certificateauthority/). Then, convert it into pem file using keychain or this command:
+`openssl x509 -inform der -in AppleAWWDRCA.cer -out wwdr.pem`
 
-######You need to store 
+#####Also, you can prepare keys, using module's function `prepareKeys(path-to-directory-with-AppleWWDRCA.cer-and-*.p12-file-signed-with-your-passTypeId.cer)`. It runs node script from [this](https://github.com/assaf/node-passbook) module.
+#####Finally, you'll get the directory with wwrd.pem and Certificates.pem (signed with Pass Type ID) files.
+
+###Preparing Passbook stuff
+
