@@ -1,5 +1,5 @@
 #passbook.js
-
+##Little passbook factory. More passbooks, less code.
 ###Preraring keys and certificates
 
 ####Pass Type ID
@@ -25,5 +25,8 @@
 
 ###Preparing Passbook stuff
 
-######Check out official documentation to know how passbook structure looks like. You'll definetely need with min configurations such as icon and logo pictures, pass.json file. Also Apple requires pictures for Retina displays 
+######Check out official documentation to know how passbook structure looks like. You'll definetely need min configurations such as icon and logo pictures, pass.json file. Also Apple requires pictures for Retina displays. To get examples, check out official [passbook materials](https://developer.apple.com/devcenter/download.action?path=/ios/passbook_support_materials/passbook_materials.dmg).
+
+######The idea of this module was that in some cases you need to create lots of passbooks without big changes, for example some great amount of same passbooks with different serial numbers. For these needs we will store all passbook resources in one folder, all keys - in other. All data is readed from pass.json file, so, please, be sure, that your pass.json file *is valid*.
+
 
