@@ -1,4 +1,4 @@
-exports.createPassbook = function(type, resorces, keys, password){
+exports.createPassbook = function(type, resources, keys, password){
 	var passbook = require('./lib/index.js');
 	var fs = require("fs");
 	var obj;
