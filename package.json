@@ -1,6 +1,6 @@
 {
   "name": "passbook.js",
-  "version": "1.0.2",
+  "version": "1.0.1",
   "description": "All you need to serve passbooks with your Node.js backend",
   "main": "./index.js",
   "scripts": {
@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/volodymyrlut/passbook.js.git"
+    "url": "https://github.com/justhappens/passbook.js.git"
   },
   "bin": {
     "node-passbook": "./node-passbook"
