@@ -1,6 +1,6 @@
 {
   "name": "passbook.js",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "All you need to serve passbooks with your Node.js backend",
   "main": "./index.js",
   "scripts": {
