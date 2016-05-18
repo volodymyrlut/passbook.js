@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/volodymyrlut/passbook.js.git"
+    "url": "https://github.com/justhappens/passbook.js.git"
   },
   "bin": {
     "node-passbook": "./node-passbook"

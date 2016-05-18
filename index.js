@@ -1,4 +1,4 @@
-exports.createPassbook = function(type, resorces, keys, password){
+exports.createPassbook = function(type, resources, keys, password,callback){
 	var passbook = require('./lib/index.js');
 	var fs = require("fs");
 	var obj;
@@ -17,8 +17,11 @@ exports.createPassbook = function(type, resorces, keys, password){
 		  password: password // pass phrase for the pass_cert.pem file
 		}
 		})
-		var pass = template.createPass(obj)
-		pass.pipe(fs.createWriteStream('pass.pkpass'))
+		var pass = template.createPass(obj);
+		var stream = pass.pipe(fs.createWriteStream('pass.pkpass'));
+		stream.on('finish',function(){
+			callback();
+		});
 	});
 }
 
