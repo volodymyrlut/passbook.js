@@ -19,7 +19,7 @@ It will ask some secret passphrase. Please, remember it, because we will need it
 
 Also, [this commands](https://www.sslshopper.com/article-most-common-openssl-commands.html) can help you.
 
-####Apple Worldwide Developer Relations Certification Authority
+#### Apple Worldwide Developer Relations Certification Authority
 
 You'll need to get AppleWWDRCA.cer file [here](https://www.apple.com/certificateauthority/). Then, convert it into pem file using keychain or this command:
 ```openssl x509 -inform der -in AppleAWWDRCA.cer -out wwdr.pem```
@@ -29,13 +29,13 @@ It runs node script from [this](https://github.com/assaf/node-passbook) module.
 
 Finally, you'll get the directory with wwrd.pem and Certificates.pem (signed with Pass Type ID) files and one passphrase, you should keep in mind.
 
-###Preparing Passbook stuff
+### Preparing Passbook stuff
 
 Check out official documentation to know how passbook structure looks like. You'll definetely need min. configurations such as icon and logo pictures, pass.json file. Also Apple requires pictures for Retina displays. To get examples, check out official [passbook materials](https://developer.apple.com/devcenter/download.action?path=/ios/passbook_support_materials/passbook_materials.dmg).
 
 The idea of this module was that in some cases you need to create lots of passbooks without big changes, for example some great amount of same passbooks with different serial numbers. For these needs we will store all passbook resources in one folder, all keys - in other. All data is readed from pass.json file, so, please, be sure, that your pass.json file *is valid*.
 
-###Hey ho, let's go!
+### Hey ho, let's go!
 
 To sign passbook, use following code:
 ```
@@ -48,7 +48,7 @@ passbook_js.createPassbook(type, resorces, keys, password);
 // password - password for Certificates.pem file
 ```
 
-It will create pass.pkpass file in root directory of your server //TODO: save the stuff in other directories. Signing mechanism was taken from [this module](https://github.com/danmilon/passbookster)
+It will create pass.pkpass file in root directory of your server //TODO: save the stuff in other directories. Signing logic was taken from [this module](https://github.com/danmilon/passbookster)
 
 Check out if it's valid using the iOS simulator. To send it from your server, be sure, that you set MIME type correctly. To set it in express, add following code to your server.js file ```express.static.mime.define({'application/vnd.apple.pkpass': ['pkpass']});```
 
