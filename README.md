@@ -1,3 +1,4 @@
+# ⚠️⚠️⚠️ WARNING: THIS PROJECT IS NOT MAINTAINED ANYMORE. USE IT ONLY FOR EDUCATIONAL PURPOSES OR ON YOUR OWN RISK.
 # passbook.js
 ## Little passbook factory. More passbooks, less code.
 ### Install
